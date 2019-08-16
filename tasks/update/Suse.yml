@@ -1,0 +1,4 @@
+- name: SLES Update packages
+  zypper:
+    name: '*'
+    state: latest

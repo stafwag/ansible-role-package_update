@@ -1,0 +1,4 @@
+- name: pkgin update
+  pkgin:
+    full_upgrade: yes
+    force: yes

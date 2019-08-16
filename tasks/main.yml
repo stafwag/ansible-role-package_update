@@ -1,0 +1,9 @@
+---
+# tasks file for ansible-role-package_update
+
+- name: set OS related variables
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - 'update/{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml'
+    - 'update/{{ ansible_distribution }}.yml'
+    - 'update/{{ ansible_os_family }}.yml'

@@ -1,0 +1,48 @@
+galaxy_info:
+  role_name: package_update
+  author: staf wagemakers <staf@wagemakers.be>
+  description: Update all packages (multiplatform)
+  license: license BSD, MIT)
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: opensuse
+      versions:
+        - all
+    - name: SLES
+      versions:
+        - all
+    - name: Archlinux
+      versions:
+        - all
+    - name: FreeBSD
+      versions:
+        - 10
+        - 11
+        - 12
+    - name: OpenBSD
+      versions:
+        - all
+  galaxy_tags:
+    - system
+    - packaging
+    - freebsd
+    - openbsd
+    - netbsd
+    - centos
+    - redhat
+    - debian
+    - ubuntu
+    - suse
+dependencies: []

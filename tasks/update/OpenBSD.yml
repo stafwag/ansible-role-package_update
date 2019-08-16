@@ -1,0 +1,4 @@
+- name: OpenBSD update 
+  openbsd_pkg:
+    name: '*'
+    state: latest

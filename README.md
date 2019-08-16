@@ -1,6 +1,6 @@
 # Ansible Role: package_update
 
-Update all packages (multiplatform)
+An ansible role to update all packages (multiplatform)
 
 ## Requirements
 

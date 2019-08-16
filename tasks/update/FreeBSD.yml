@@ -1,11 +1,11 @@
 - name: pkg update -f
-  shell: pkg update
+  command: pkg update
   register: pkg_update_y
   changed_when: "pkg_update_y.rc != 0"
 - name: verify if there are upgrades available
-  shell: pkg upgrade -n
+  command: pkg upgrade -n
   register: pkg_upgrade_n
   changed_when: "pkg_upgrade_n.rc != 0"
 - name: upgrade
-  shell: pkg upgrade -y
+  command: pkg upgrade -y
   when: "pkg_upgrade_n.rc != 0"

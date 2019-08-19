@@ -6,6 +6,7 @@
   command: pkg upgrade -n
   register: pkg_upgrade_n
   changed_when: "pkg_upgrade_n.rc != 0"
+  failed_when: "pkg_upgrade_n.rc > 1"
 - name: upgrade
   command: pkg upgrade -y
   when: "pkg_upgrade_n.rc != 0"

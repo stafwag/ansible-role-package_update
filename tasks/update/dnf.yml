@@ -1,0 +1,2 @@
+- name: dnf update all
+  dnf: name=* state=latest

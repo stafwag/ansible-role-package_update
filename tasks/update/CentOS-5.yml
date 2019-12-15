@@ -1,0 +1,2 @@
+- name: run yum update -y
+  command: yum update -y

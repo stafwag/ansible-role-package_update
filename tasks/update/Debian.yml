@@ -1,4 +1,4 @@
-- name: install aptitude 
+- name: install aptitude
   apt: name=aptitude state=latest
 - name: update all
   apt:

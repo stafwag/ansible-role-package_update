@@ -2,7 +2,7 @@
   apt: name=aptitude state=latest
 - name: update all
   apt:
-    upgrade: yes
+    upgrade: dist
     update_cache: yes
     autoclean: yes
     autoremove: yes

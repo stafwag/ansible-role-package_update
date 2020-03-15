@@ -3,12 +3,6 @@
     my_pkg_cmd: pkg
   when:
     - jail_id == 0
-- name:
-- name: set my_pkg_cmd var for host
-  set_fact:
-    my_pkg_cmd: pkg
-  when:
-    - jail_id == 0
 - name: set my_pkg_cmd for jail
   set_fact:
     my_pkg_cmd: 'pkg -j {{ jail_id }}'

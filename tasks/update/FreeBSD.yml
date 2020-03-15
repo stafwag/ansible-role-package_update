@@ -1,11 +1,2 @@
-- name:
-    set_fact:
-      - package_update.freebsd.update_host: true
-      - package_update.freebsd.update_jails: true
-  when: 
-    - package_update.freebsd is not defined
 - name: update host 
-  include_tasks:
-    - FreeBSD/update_hosts.yml
-  when:
-    - package_update.freebsd.update_host
+  include_tasks: FreeBSD/update_host.yml

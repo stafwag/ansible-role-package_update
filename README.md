@@ -15,14 +15,28 @@ An ansible role to update all packages (multiplatform)
 * Suse
 
 ## Role Variables
+### OS related variables
 
-None
+The following variables are set by the role.
+
+* **freebsd_running_jails**: List with the running FreeBSD jails.
+
+### Playbook related variables
+
+* **package_update**: "name space"
+  * **freebsd**: "freebsd config" 
+    * **get_running_fails**: no | yes (default) set the freebsd_running_jails variable.
+    * **host**: no | yes (default) update the host system
+    * **jails**: Array of jails to update, **freebsd_running_jails** by default.
+    
 
 ## Dependencies
 
 None
 
-## Example Playbook
+## Example Playbooks
+
+### Upgrade
 
 ```
 ---
@@ -32,6 +46,56 @@ None
   roles:
     - stafwag.package_update
 ```
+
+### Update only the FreeBSD host systems. 
+
+```
+---
+- name: update packages
+  hosts: all
+  become: true
+  roles:
+    - role: stafwag.package_update
+      vars:
+        package_update:
+          freebsd:
+            get_running_fails: no
+            jails: []
+```
+
+### Update only the running jails on FreeBSD systems.
+
+```
+---
+- name: update packages
+  hosts: all
+  become: true
+  roles:
+    - role: stafwag.package_update
+      vars:
+        package_update:
+          freebsd:
+            host: no
+```
+
+### Update a jail on a  FreeBSD system.
+
+```
+---
+- name: update packages
+  hosts: rataplan
+  become: true
+  roles:
+    - role: stafwag.package_update
+      vars:
+        package_update:
+          freebsd:
+            host: no
+            jails:
+              - stafmail
+
+```
+
 
 ## License
 

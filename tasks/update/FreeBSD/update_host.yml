@@ -1,5 +1,0 @@
-- name: set jail_id to 0
-  set_fact:
-    jail_id: 0
-- name: update the host
-  include_tasks: update.yaml

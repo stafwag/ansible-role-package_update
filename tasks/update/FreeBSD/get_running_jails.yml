@@ -1,0 +1,7 @@
+- name: execute jls
+  shell: jls | sed 1d | awk '{ print $3 }'
+  register: cmd_jail_id_list
+  changed_when: False
+- name: set freebsd_running_jails
+  set_fact:
+    freebsd_running_jails: '{{ cmd_jail_id_list.stdout_lines }}'

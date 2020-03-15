@@ -1,2 +1,28 @@
-- name: update host 
-  include_tasks: FreeBSD/update_host.yml
+- name: set _update_freebsd_host
+  set_fact:
+    _update_freebsd_host: '{{ package_update.freebsd.host | default(true) }}'
+
+- name: set _get_running_jails
+  set_fact:
+    _get_running_jails: '{{ package_update.freebsd.get_running_fails | default(true) }}'
+
+- name: get the running jails
+  include_tasks: FreeBSD/get_running_jails.yml
+  when:
+    - _get_running_jails
+
+- name: set _update_freebsd_jails
+  set_fact:
+    _update_freebsd_jails: '{{ package_update.freebsd.jails | default( freebsd_running_jails) }}'
+
+- name: add id 0 to the list to update the host system
+  set_fact:
+    _update_freebsd_jails: '{{ [ 0 ] + _update_freebsd_jails }}'
+  when:
+    - _update_freebsd_host
+
+- name: update jails
+  include_tasks: FreeBSD/update.yml
+  loop: "{{ _update_freebsd_jails | default(omit) }}"
+  loop_control:
+    loop_var: jail_id

@@ -1,2 +1,7 @@
+- name: yum check-update
+  command: yum check-update
+  register: yum_check_update
+  changed_when: "yum_check_update.rc != 0"
 - name: run yum update -y
   command: yum update -y
+  when: "yum_check_update.rc != 0"

@@ -59,7 +59,7 @@ None
       vars:
         package_update:
           freebsd:
-            get_running_fails: no
+            get_running_jails: no
             jails: []
 ```
 

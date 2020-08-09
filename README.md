@@ -25,7 +25,7 @@ The following variables are set by the role.
 
 * **package_update**: "name space"
   * **freebsd**: "freebsd config" 
-    * **get_running_fails**: no | yes (default) set the freebsd_running_jails variable.
+    * **get_running_jails**: no | yes (default) set the freebsd_running_jails variable.
     * **host**: no | yes (default) update the host system
     * **jails**: Array of jails to update, **freebsd_running_jails** by default.
     

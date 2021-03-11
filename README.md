@@ -13,6 +13,7 @@ An ansible role to update all packages (multiplatform)
 * OpenBSD
 * RedHat
 * Suse
+* Kali GNU/Linux
 
 ## Role Variables
 ### OS related variables

@@ -8,3 +8,4 @@
     - 'update/{{ ansible_pkg_mgr }}.yml'
     - 'update/{{ ansible_distribution }}.yml'
     - 'update/{{ ansible_os_family }}.yml'
+    - 'update/{{ ansible_os_family | replace ("/","_") | replace(" ","_") }}.yml'

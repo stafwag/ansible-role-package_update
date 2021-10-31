@@ -1,9 +1,1 @@
-- name: install aptitude
-  apt: name=aptitude state=latest
-- name: update all
-  apt:
-    upgrade: dist
-    update_cache: yes
-    autoclean: yes
-    autoremove: yes
-    cache_valid_time: 86400 #One day
+Debian.yml

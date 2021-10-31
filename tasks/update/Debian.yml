@@ -1,9 +1,10 @@
+- name: Update apt cache
+  apt:
+    update_cache: yes
 - name: install aptitude
   apt: name=aptitude state=latest
-- name: update all
+- name: Upgrade all
   apt:
     upgrade: dist
-    update_cache: yes
     autoclean: yes
     autoremove: yes
-    cache_valid_time: 86400 #One day

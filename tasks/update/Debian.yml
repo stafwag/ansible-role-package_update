@@ -1,6 +1,7 @@
 - name: Update apt cache
   apt:
     update_cache: yes
+  changed_when: False
 - name: install aptitude
   apt: name=aptitude state=latest
 - name: Upgrade all

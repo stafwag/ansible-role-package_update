@@ -1,4 +1,4 @@
 ---
-- name: update solaris
-  debug:
+- name: Update solaris
+  ansible.builtin.debug:
     msg: Not implemented yet

@@ -1,2 +1,3 @@
+---
 - name: yum update all
-  yum: name=* state=latest
+  ansible.builtin.yum: name=* state=latest # noqa package-latest

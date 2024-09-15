@@ -1,3 +1,4 @@
+---
 - name: update solaris
   debug:
     msg: Not implemented yet

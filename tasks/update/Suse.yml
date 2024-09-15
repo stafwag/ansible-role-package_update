@@ -1,4 +1,5 @@
+---
 - name: SLES Update packages
-  zypper:
+  community.general.zypper:
     name: '*'
     state: latest

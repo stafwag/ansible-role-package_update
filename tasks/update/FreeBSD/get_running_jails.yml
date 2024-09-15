@@ -1,6 +1,6 @@
 ---
-- name: execute jls
-  shell: |
+- name: Execute jls
+  ansible.builtin.shell: |
     set -o errexit
     set -o pipefail
     set -o nounset
@@ -8,6 +8,6 @@
     jls | sed 1d | awk '{ print $3 }'
   register: cmd_jail_id_list
   changed_when: false
-- name: set freebsd_running_jails
-  set_fact:
-    freebsd_running_jails: '{{ cmd_jail_id_list.stdout_lines }}'
+- name: Set freebsd_running_jails
+  ansible.builtin.set_fact:
+    freebsd_running_jails: "{{ cmd_jail_id_list.stdout_lines }}"

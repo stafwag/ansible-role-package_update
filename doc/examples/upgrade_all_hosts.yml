@@ -1,0 +1,6 @@
+---
+- name: update packages
+  hosts: all
+  become: true
+  roles:
+    - stafwag.package_update

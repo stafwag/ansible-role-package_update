@@ -3,8 +3,10 @@
   ansible.builtin.apt:
     update_cache: true
   changed_when: false
-- name: install aptitude
-  ansible.builtin.apt: name=aptitude state=present
+- name: Install aptitude
+  ansible.builtin.apt:
+    name: aptitude
+    state: present
 - name: Upgrade all
   ansible.builtin.apt:
     upgrade: dist

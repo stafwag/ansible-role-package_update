@@ -1,5 +1,5 @@
 ---
-- name: pkgin update
-  pkgin:
+- name: Pkgin update
+  community.general.pkgin:
     full_upgrade: true
     force: true

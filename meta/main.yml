@@ -5,7 +5,7 @@ galaxy_info:
   author: staf wagemakers <staf@wagemakers.be>
   description: Update all packages (multiplatform)
   license: license BSD, MIT)
-  min_ansible_version: 2.4
+  min_ansible_version: "2.4"
   platforms:
     - name: EL
       versions:
@@ -32,6 +32,9 @@ galaxy_info:
       versions:
         - "all"
     - name: OpenBSD
+      versions:
+        - "all"
+    - name: NetBSD
       versions:
         - "all"
   galaxy_tags:

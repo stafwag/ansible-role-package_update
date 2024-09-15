@@ -1,23 +1,24 @@
 ---
-- name: set my_pkg_cmd var for host
-  set_fact:
+- name: Set my_pkg_cmd var for host
+  ansible.builtin.set_fact:
     my_pkg_cmd: pkg
   when:
     - jail_id == 0
-- name: set my_pkg_cmd for jail
-  set_fact:
-    my_pkg_cmd: 'pkg -j {{ jail_id }}'
+- name: Set my_pkg_cmd for jail
+  ansible.builtin.set_fact:
+    my_pkg_cmd: "pkg -j {{ jail_id }}"
   when:
     - jail_id != 0
-- name: 'pkg update {{ jail_id }}'
-  command: '{{ my_pkg_cmd }} update'
+- name: "Run pkg update {{ jail_id }}"
+  ansible.builtin.command: "{{ my_pkg_cmd }} update"
   register: pkg_update_y
   changed_when: "pkg_update_y.rc != 0"
-- name: 'verify if there are upgrades available {{ jail_id }}'
-  command: '{{ my_pkg_cmd }} upgrade -n'
+- name: "Verify if there are upgrades available {{ jail_id }}"
+  ansible.builtin.command: "{{ my_pkg_cmd }} upgrade -n"
   register: pkg_upgrade_n
   changed_when: "pkg_upgrade_n.rc != 0"
   failed_when: "pkg_upgrade_n.rc > 1"
-- name: 'upgrade {{ jail_id }}'
-  command: '{{ my_pkg_cmd }} upgrade -y'
+- name: "Upgrade {{ jail_id }}"
+  ansible.builtin.command: "{{ my_pkg_cmd }} upgrade -y"
+  changed_when: true
   when: "pkg_upgrade_n.rc != 0"

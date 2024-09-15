@@ -1,11 +1,12 @@
+---
 - name: Update apt cache
-  apt:
-    update_cache: yes
-  changed_when: False
+  ansible.builtin.apt:
+    update_cache: true
+  changed_when: false
 - name: install aptitude
-  apt: name=aptitude state=latest
+  ansible.builtin.apt: name=aptitude state=present
 - name: Upgrade all
-  apt:
+  ansible.builtin.apt:
     upgrade: dist
-    autoclean: yes
-    autoremove: yes
+    autoclean: true
+    autoremove: true

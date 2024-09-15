@@ -1,3 +1,4 @@
+---
 - name: set _update_freebsd_host
   set_fact:
     _update_freebsd_host: '{{ package_update.freebsd.host | default(true) }}'

@@ -1,2 +1,3 @@
+---
 - name: dnf update all
-  dnf: name=* state=latest
+  ansible.builtin.dnf: name=* state=latest # noqa package-latest

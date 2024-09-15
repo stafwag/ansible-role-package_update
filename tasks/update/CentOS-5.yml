@@ -1,7 +1,8 @@
+---
 - name: yum check-update
-  command: yum check-update
+  command: yum check-update # noqa command-instead-of-module
   register: yum_check_update
   changed_when: "yum_check_update.rc != 0"
 - name: run yum update -y
-  command: yum update -y
+  command: yum update -y # noqa command-instead-of-module
   when: "yum_check_update.rc != 0"

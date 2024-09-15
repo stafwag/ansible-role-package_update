@@ -1,3 +1,4 @@
+---
 - name: set my_pkg_cmd var for host
   set_fact:
     my_pkg_cmd: pkg

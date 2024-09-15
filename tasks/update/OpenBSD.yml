@@ -1,4 +1,5 @@
+---
 - name: OpenBSD update
-  openbsd_pkg:
+  community.general.openbsd_pkg:
     name: '*'
     state: latest

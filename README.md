@@ -15,18 +15,18 @@ An ansible role to update all packages (multiplatform)
 * Suse
 * Kali GNU/Linux
 
-# Installation
+## Installation
 
-## Ansible galaxy
+### Ansible galaxy
 
 The role is available on [Ansible Galaxy](https://galaxy.ansible.com/ui/standalone/roles/stafwag/package_update/).
 
-To install the role from Ansible Galaxy execute the command below. 
+To install the role from Ansible Galaxy execute the command below.
 
 ```bash
 ansible-galaxy install stafwag.package_update
 ```
-## Source Code
+### Source Code
 
 If you want to use the source code directly.
 
@@ -48,7 +48,7 @@ The following variables are set by the role.
 ### Playbook related variables
 
 * **package_update**: "name space"
-  * **freebsd**: "freebsd config" 
+  * **freebsd**: "freebsd config"
     * **get_running_jails**: no | yes (default) set the freebsd_running_jails variable.
     * **host**: no | yes (default) update the host system
     * **jails**: Array of jails to update, **freebsd_running_jails** by default.
@@ -64,18 +64,18 @@ None
 
 ```
 ---
-- name: update packages
+- name: Update packages
   hosts: all
   become: true
   roles:
     - stafwag.package_update
 ```
 
-### Update only the FreeBSD host systems. 
+### Update only the FreeBSD host systems.
 
 ```
 ---
-- name: update packages
+- name: Update packages
   hosts: all
   become: true
   roles:
@@ -91,7 +91,7 @@ None
 
 ```
 ---
-- name: update packages
+- name: Update packages
   hosts: all
   become: true
   roles:
@@ -106,7 +106,7 @@ None
 
 ```
 ---
-- name: update packages
+- name: Update packages
   hosts: rataplan
   become: true
   roles:

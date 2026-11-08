@@ -15,9 +15,9 @@ An ansible role to update all packages (multiplatform)
 * Suse
 * Kali GNU/Linux
 
-# Installation
+## Installation
 
-## Ansible galaxy
+### Ansible galaxy
 
 The role is available on [Ansible Galaxy](https://galaxy.ansible.com/ui/standalone/roles/stafwag/package_update/).
 
@@ -26,7 +26,7 @@ To install the role from Ansible Galaxy execute the command below.
 ```bash
 ansible-galaxy install stafwag.package_update
 ```
-## Source Code
+### Source Code
 
 If you want to use the source code directly.
 

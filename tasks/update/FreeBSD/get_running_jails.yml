@@ -5,7 +5,7 @@
     set -o pipefail
     set -o nounset
 
-    jls | sed 1d | awk '{ print $3 }'
+    jls -N | sed 1d | awk '{ print $1 }'
   register: cmd_jail_id_list
   changed_when: false
 - name: Set freebsd_running_jails

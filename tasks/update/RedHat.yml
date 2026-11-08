@@ -1,1 +1,5 @@
-dnf.yml
+---
+- name: Upgrade all packages with dnf
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest # noqa package-latest

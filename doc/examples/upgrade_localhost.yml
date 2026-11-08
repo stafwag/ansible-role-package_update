@@ -1,5 +1,5 @@
 ---
-- name: update packages
+- name: Update packages
   hosts: localhost
   become: true
   roles:
